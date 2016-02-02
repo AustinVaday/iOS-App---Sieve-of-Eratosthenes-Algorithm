@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF05722C1C617478009FD842 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05722B1C617478009FD842 /* AppDelegate.swift */; };
+		FF05722E1C617478009FD842 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05722D1C617478009FD842 /* ViewController.swift */; };
+		FF0572311C617478009FD842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF05722F1C617478009FD842 /* Main.storyboard */; };
+		FF0572331C617478009FD842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0572321C617478009FD842 /* Assets.xcassets */; };
+		FF0572361C617478009FD842 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0572341C617478009FD842 /* LaunchScreen.storyboard */; };
+		FF0572411C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0572401C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmTests.swift */; };
+		FF05724C1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05724B1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF05723D1C617478009FD842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF0572201C617478009FD842 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF0572271C617478009FD842;
+			remoteInfo = "Sieve-of-Eratosthenes-Algorithm";
+		};
+		FF0572481C617478009FD842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF0572201C617478009FD842 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF0572271C617478009FD842;
+			remoteInfo = "Sieve-of-Eratosthenes-Algorithm";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF0572281C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sieve-of-Eratosthenes-Algorithm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF05722B1C617478009FD842 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF05722D1C617478009FD842 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF0572301C617478009FD842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF0572321C617478009FD842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF0572351C617478009FD842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF0572371C617478009FD842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF05723C1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sieve-of-Eratosthenes-AlgorithmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0572401C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sieve_of_Eratosthenes_AlgorithmTests.swift; sourceTree = "<group>"; };
+		FF0572421C617478009FD842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF0572471C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sieve-of-Eratosthenes-AlgorithmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF05724B1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sieve_of_Eratosthenes_AlgorithmUITests.swift; sourceTree = "<group>"; };
+		FF05724D1C617478009FD842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF0572251C617478009FD842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0572391C617478009FD842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0572441C617478009FD842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF05721F1C617478009FD842 = {
+			isa = PBXGroup;
+			children = (
+				FF05722A1C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm */,
+				FF05723F1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmTests */,
+				FF05724A1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmUITests */,
+				FF0572291C617478009FD842 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF0572291C617478009FD842 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF0572281C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm.app */,
+				FF05723C1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmTests.xctest */,
+				FF0572471C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF05722A1C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				FF05722B1C617478009FD842 /* AppDelegate.swift */,
+				FF05722D1C617478009FD842 /* ViewController.swift */,
+				FF05722F1C617478009FD842 /* Main.storyboard */,
+				FF0572321C617478009FD842 /* Assets.xcassets */,
+				FF0572341C617478009FD842 /* LaunchScreen.storyboard */,
+				FF0572371C617478009FD842 /* Info.plist */,
+			);
+			path = "Sieve-of-Eratosthenes-Algorithm";
+			sourceTree = "<group>";
+		};
+		FF05723F1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF0572401C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmTests.swift */,
+				FF0572421C617478009FD842 /* Info.plist */,
+			);
+			path = "Sieve-of-Eratosthenes-AlgorithmTests";
+			sourceTree = "<group>";
+		};
+		FF05724A1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF05724B1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift */,
+				FF05724D1C617478009FD842 /* Info.plist */,
+			);
+			path = "Sieve-of-Eratosthenes-AlgorithmUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF0572271C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0572501C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-Algorithm" */;
+			buildPhases = (
+				FF0572241C617478009FD842 /* Sources */,
+				FF0572251C617478009FD842 /* Frameworks */,
+				FF0572261C617478009FD842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sieve-of-Eratosthenes-Algorithm";
+			productName = "Sieve-of-Eratosthenes-Algorithm";
+			productReference = FF0572281C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF05723B1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0572531C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-AlgorithmTests" */;
+			buildPhases = (
+				FF0572381C617478009FD842 /* Sources */,
+				FF0572391C617478009FD842 /* Frameworks */,
+				FF05723A1C617478009FD842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF05723E1C617478009FD842 /* PBXTargetDependency */,
+			);
+			name = "Sieve-of-Eratosthenes-AlgorithmTests";
+			productName = "Sieve-of-Eratosthenes-AlgorithmTests";
+			productReference = FF05723C1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF0572461C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0572561C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-AlgorithmUITests" */;
+			buildPhases = (
+				FF0572431C617478009FD842 /* Sources */,
+				FF0572441C617478009FD842 /* Frameworks */,
+				FF0572451C617478009FD842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF0572491C617478009FD842 /* PBXTargetDependency */,
+			);
+			name = "Sieve-of-Eratosthenes-AlgorithmUITests";
+			productName = "Sieve-of-Eratosthenes-AlgorithmUITests";
+			productReference = FF0572471C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF0572201C617478009FD842 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = None;
+				TargetAttributes = {
+					FF0572271C617478009FD842 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					FF05723B1C617478009FD842 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = FF0572271C617478009FD842;
+					};
+					FF0572461C617478009FD842 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = FF0572271C617478009FD842;
+					};
+				};
+			};
+			buildConfigurationList = FF0572231C617478009FD842 /* Build configuration list for PBXProject "Sieve-of-Eratosthenes-Algorithm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF05721F1C617478009FD842;
+			productRefGroup = FF0572291C617478009FD842 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF0572271C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm */,
+				FF05723B1C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmTests */,
+				FF0572461C617478009FD842 /* Sieve-of-Eratosthenes-AlgorithmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF0572261C617478009FD842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0572361C617478009FD842 /* LaunchScreen.storyboard in Resources */,
+				FF0572331C617478009FD842 /* Assets.xcassets in Resources */,
+				FF0572311C617478009FD842 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF05723A1C617478009FD842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0572451C617478009FD842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF0572241C617478009FD842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF05722E1C617478009FD842 /* ViewController.swift in Sources */,
+				FF05722C1C617478009FD842 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0572381C617478009FD842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0572411C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF0572431C617478009FD842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF05724C1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF05723E1C617478009FD842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF0572271C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm */;
+			targetProxy = FF05723D1C617478009FD842 /* PBXContainerItemProxy */;
+		};
+		FF0572491C617478009FD842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF0572271C617478009FD842 /* Sieve-of-Eratosthenes-Algorithm */;
+			targetProxy = FF0572481C617478009FD842 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FF05722F1C617478009FD842 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF0572301C617478009FD842 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF0572341C617478009FD842 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF0572351C617478009FD842 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF05724E1C617478009FD842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF05724F1C617478009FD842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF0572511C617478009FD842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sieve-of-Eratosthenes-Algorithm/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Sieve-of-Eratosthenes-Algorithm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF0572521C617478009FD842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sieve-of-Eratosthenes-Algorithm/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Sieve-of-Eratosthenes-Algorithm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FF0572541C617478009FD842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sieve-of-Eratosthenes-AlgorithmTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Sieve-of-Eratosthenes-AlgorithmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sieve-of-Eratosthenes-Algorithm.app/Sieve-of-Eratosthenes-Algorithm";
+			};
+			name = Debug;
+		};
+		FF0572551C617478009FD842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sieve-of-Eratosthenes-AlgorithmTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Sieve-of-Eratosthenes-AlgorithmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sieve-of-Eratosthenes-Algorithm.app/Sieve-of-Eratosthenes-Algorithm";
+			};
+			name = Release;
+		};
+		FF0572571C617478009FD842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Sieve-of-Eratosthenes-AlgorithmUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Sieve-of-Eratosthenes-AlgorithmUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Sieve-of-Eratosthenes-Algorithm";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FF0572581C617478009FD842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Sieve-of-Eratosthenes-AlgorithmUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Sieve-of-Eratosthenes-AlgorithmUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Sieve-of-Eratosthenes-Algorithm";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF0572231C617478009FD842 /* Build configuration list for PBXProject "Sieve-of-Eratosthenes-Algorithm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF05724E1C617478009FD842 /* Debug */,
+				FF05724F1C617478009FD842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0572501C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-Algorithm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0572511C617478009FD842 /* Debug */,
+				FF0572521C617478009FD842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FF0572531C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-AlgorithmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0572541C617478009FD842 /* Debug */,
+				FF0572551C617478009FD842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FF0572561C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-AlgorithmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0572571C617478009FD842 /* Debug */,
+				FF0572581C617478009FD842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF0572201C617478009FD842 /* Project object */;
+}
