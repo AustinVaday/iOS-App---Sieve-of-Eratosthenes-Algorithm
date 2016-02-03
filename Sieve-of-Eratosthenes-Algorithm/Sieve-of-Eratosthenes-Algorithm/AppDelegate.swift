@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        // Create an object to encapsulate Sieve of Eratosthenses algorithm functionality
+        var sieveObj:SieveOfEratosthenses = SieveOfEratosthenses(upToNum: 20)
+        
+        sieveObj.setUpToNum(300)
+        
+        
+        
         return true
     }
 
