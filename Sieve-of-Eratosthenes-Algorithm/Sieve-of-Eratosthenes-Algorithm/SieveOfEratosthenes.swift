@@ -122,6 +122,13 @@ class SieveOfEratosthenses
         }
     }
     
+    // Wrapper class for the algorithm
+    func computeSieveOfEratosthenses(newUpToNum: Int)
+    {
+        setUpToNum(newUpToNum)
+        computeSieveOfEratosthenses()
+    }
+    
     
     /*********************************************
     * Helper Methods

@@ -27,14 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("NEXT")
         
-        sieveObj.setUpToNum(100)
-        sieveObj.computeSieveOfEratosthenses()
+        sieveObj.computeSieveOfEratosthenses(100)
         sieveObj.outputListOfPrimeNums()
         
         print("NEXT")
         
-        sieveObj.setUpToNum(50)
-        sieveObj.computeSieveOfEratosthenses()
+        sieveObj.computeSieveOfEratosthenses(50)
+        sieveObj.outputListOfPrimeNums()
+        
+        print("NEXT")
+        
+        sieveObj.computeSieveOfEratosthenses(200)
         sieveObj.outputListOfPrimeNums()
         
         return true
