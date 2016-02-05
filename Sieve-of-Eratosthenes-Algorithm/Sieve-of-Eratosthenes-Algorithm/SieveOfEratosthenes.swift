@@ -6,6 +6,7 @@
 //  Copyright © 2016 None. All rights reserved.
 //
 
+import UIKit
 
 /*********************************************
 * SieveOfEratosthenses Class:
@@ -67,23 +68,44 @@ class SieveOfEratosthenses
             }
         }
         
-        outputListOfNums()
-        
     }
     
     // Implementation of the algorithm using the initialized array
     func computeSieveOfEratosthenses()
     {
-            //TODO: Implement algorithm
+
+        let size    : Int = listOfNums.count
+        let sqrtSize: Int = Int(sqrt(Float(size)))
+        
+        // Iterate through array of boolean values. Stop *after* the square root of
+        // the size of the array because we can't eliminate any other numbers in the
+        // range. 
+        // I.e. If size = 30, then sqrtSize = 5. 6 * 6 is out range for our inner loop.
+        for (var i = 2; i <= sqrtSize; i++)
+        {
+            
+            // If the indexed boolean value is true, it is prime. So we take this prime number
+            // and set all of its multiples to false
+            if (listOfNums[i])
+            {
+
+                // Start at the first multiple of number i (i^2), set it to false. 
+                // Then proceed to set all other multiples of this prime number to false.
+                // Ex: If i is 2, we set index 4 to false, index 6 to false, index 8 to false, and so on.
+                for (var j = i*i; j < size; j = j + i)
+                {
+                    listOfNums[j] = false
+                }
+            }
+            
+        }
     }
     
-
-    private
     
     /*********************************************
     * Helper Methods
     **********************************************/
-    func generateNewListOfNums(upToNum: Int)
+    private func generateNewListOfNums(upToNum: Int)
     {
         // Initialize array of upToNum boolean values
         listOfNums = Array<Bool>(count: upToNum, repeatedValue: true)
@@ -100,7 +122,7 @@ class SieveOfEratosthenses
             print("Index: ", i, "; Value ", listOfNums[i])
         }
     }
-
+    
     /*********************************************
     * Constants
     **********************************************/
@@ -109,8 +131,8 @@ class SieveOfEratosthenses
     /*********************************************
      * Variables
      **********************************************/
-    var upToNum: Int!
-    var listOfNums: Array<Bool>!
+    private var upToNum: Int!
+    private var listOfNums: Array<Bool>! // TRUE: Not prime; FALSE: Prime
     
 }
 

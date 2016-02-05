@@ -19,11 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Create an object to encapsulate Sieve of Eratosthenses algorithm functionality
-        var sieveObj:SieveOfEratosthenses = SieveOfEratosthenses(upToNum: 20)
+        var sieveObj:SieveOfEratosthenses = SieveOfEratosthenses(upToNum: 30)
         
-        sieveObj.setUpToNum(300)
+
+        sieveObj.computeSieveOfEratosthenses()
         
-        
+        sieveObj.outputListOfNums()
         
         return true
     }
