@@ -23,20 +23,20 @@ class SieveOfEratosthenses
      **********************************************/
      
     // Init method to set upToNum upon creation
-    init(upToNum: Int)
+    init(newUpToNum: Int)
     {
         // If number is 0 or negative, log an error to console
-        if (upToNum <= 0)
+        if (newUpToNum <= 0)
         {
             print("SieveOfEratosthenes initialized with invalid upToNum of ", upToNum)
             print("Continuing with default upToNum: ", UP_TO_NUM_DEFAULT)
             
             // Set back to default state of UP_TO_NUM_DEFAULT
-            self.upToNum = UP_TO_NUM_DEFAULT
+            upToNum = UP_TO_NUM_DEFAULT
         }
         else
         {
-            self.upToNum = upToNum
+            upToNum = newUpToNum
         }
         
         // Generate a new list for private class variable, listOfNums
@@ -49,15 +49,33 @@ class SieveOfEratosthenses
     // Method to change upToNum. Will also change array (only if necessary)
     func setUpToNum(newUpToNum: Int)
     {
-        // If the new upToNum is less than or equal to the old upToNum, 
-        // do not allocate more space, just update the upToNum
-        if (newUpToNum <= upToNum)
+
+        // If number is 0 or negative, log an error to console
+        if (newUpToNum <= 0)
         {
+            print("SieveOfEratosthenes initialized with invalid upToNum of ", upToNum)
+            print("Continuing with default upToNum: ", UP_TO_NUM_DEFAULT)
+            
+            // Set back to default state of UP_TO_NUM_DEFAULT
+            upToNum = UP_TO_NUM_DEFAULT
+        }
+        // If the new upToNum is less than the old upToNum,
+        // truncate from the list
+        else if (newUpToNum < upToNum)
+        {
+            // Calculate the number of indices we must truncate
+            let numTruncIndices = upToNum - newUpToNum
+            
+            for (var index = 0; index < numTruncIndices; index++)
+            {
+                listOfNums.removeLast()
+            }
+            
             upToNum = newUpToNum
         }
-        // We need to allocate more space 
+        // We need to allocate more space
         // note: This does not wipe current array, so true/false values will remain the same unless the array is re-generated
-        else
+        else if (newUpToNum > upToNum)
         {
             // Calculate the number of new indices we have to add to the array
             let numNewIndices = newUpToNum - upToNum
@@ -66,7 +84,10 @@ class SieveOfEratosthenses
             {
                 listOfNums.append(true)
             }
+            
+            upToNum = newUpToNum
         }
+        
         
     }
     
@@ -120,6 +141,17 @@ class SieveOfEratosthenses
         for var i = 0; i < listOfNums.count; i++
         {
             print("Index: ", i, "; Value ", listOfNums[i])
+        }
+    }
+    
+    func outputListOfPrimeNums()
+    {
+        for var i = 0; i < listOfNums.count; i++
+        {
+            if (listOfNums[i])
+            {
+                print(i)
+            }
         }
     }
     
