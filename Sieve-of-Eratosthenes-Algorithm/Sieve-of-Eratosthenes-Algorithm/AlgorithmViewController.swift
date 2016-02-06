@@ -17,6 +17,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     var receivedString: String!
     var receivedNum: Int!
     var sieveObj: SieveOfEratosthenses!
+    var sieveArray: Array<Bool>!
     
     let reusableCellIdentifier = "numberCell"
 
@@ -35,11 +36,14 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         sieveObj.computeSieveOfEratosthenses()
         
-    
+        // Generate the sieveArray that holds all true/false values
+        // (information whether an index/number is prime or not)
+        sieveArray = sieveObj.returnListOfNums()
+
     }
     
     override func viewDidAppear(animated: Bool) {
-        sieveObj.outputListOfNums()
+
 
     }
     
@@ -53,23 +57,33 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     // Tell the collection view how many cells we need to make
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // We need a collection of n - 1 cells (the aglorithm does not include last digit of the specified up-to-num)
-        return receivedNum - 1;
+        // We need a collection of n cells (the aglorithm does not include last digit of the specified up-to-num)
+        return receivedNum;
     }
     
     // Tell the collection view about the cell we want to use at a particular index of the collection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
+        let cellIndex = indexPath.item
+        
         // Reference the storyboard cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reusableCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
         
-        // Set the cell number
-        cell.cellLabel.text = "1"
+        // Set the visible cell number
+        cell.cellLabel.text = String(cellIndex)
         
+        print(cellIndex)
         // Set the background color: 
-        // Green ==> Is a prime number
-        // Red   ==> Is not a prime number
-        cell.backgroundColor = UIColor.greenColor()
+        // True  ==> Is a prime number     ==> Green
+        // False ==> Is not a prime number ==> Red
+        if (sieveArray[cellIndex])
+        {
+            cell.backgroundColor = UIColor.greenColor()
+        }
+        else
+        {
+            cell.backgroundColor = UIColor.redColor()
+        }
         
         // -- Modify cell attributes further --
         

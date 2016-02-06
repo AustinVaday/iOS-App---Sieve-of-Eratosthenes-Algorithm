@@ -129,6 +129,12 @@ class SieveOfEratosthenses
         computeSieveOfEratosthenses()
     }
     
+    // Return a boolean array
+    func returnListOfNums() -> Array<Bool>
+    {
+        return listOfNums
+    }
+    
     
     /*********************************************
     * Helper Methods
