@@ -69,7 +69,20 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Set the background color: 
         // Green ==> Is a prime number
         // Red   ==> Is not a prime number
-        cell.backgroundColor = UIColor.blueColor()
+        cell.backgroundColor = UIColor.greenColor()
+        
+        // -- Modify cell attributes further --
+        
+        // Set border color to black
+        cell.layer.borderColor = UIColor.blackColor().CGColor
+        
+        // Increase border thickness
+        cell.layer.borderWidth = 2.0
+        
+        // Make cells circular
+        cell.layer.cornerRadius = cell.frame.size.width / 2
+        
+        
         
         return cell
     }
