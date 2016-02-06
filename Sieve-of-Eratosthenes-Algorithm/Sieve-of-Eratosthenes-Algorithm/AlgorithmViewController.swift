@@ -8,19 +8,24 @@
 
 import UIKit
 
-class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var numberLabel: UILabel!
-
+    @IBOutlet weak var numberCollectionView: UICollectionView!
     
     // This string will store data being passed from ViewController
     var receivedString: String!
     var receivedNum: Int!
     var sieveObj: SieveOfEratosthenses!
     var sieveArray: Array<Bool>!
+    var collectionViewWidth: CGFloat!
+    var calcCellSize: CGFloat!
     
     let reusableCellIdentifier = "numberCell"
-
+    let minCellSpacing = CGFloat(3)
+    let numCellPerRow  = CGFloat(10)
+    let collectionViewPadding = CGFloat(20+20)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +44,13 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Generate the sieveArray that holds all true/false values
         // (information whether an index/number is prime or not)
         sieveArray = sieveObj.returnListOfNums()
+        
+        // Store the width of the collection view so that we can programatically 
+        // enforce 10 numbers per row
+        collectionViewWidth = UIScreen.mainScreen().bounds.width - collectionViewPadding
+        
+        // Enforce 10 cells per row by calculating how much space there is for each cell
+        calcCellSize = (collectionViewWidth - numCellPerRow * minCellSpacing) / numCellPerRow
 
     }
     
@@ -54,17 +66,28 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // Collection view functionality
     
+    // Tell the collection view about the size of our cells
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+                
+        // Set the size of the cell so that we can have 10 cells per row
+        return CGSize(width: calcCellSize, height: calcCellSize)
+    }
+    
+    
+    
     // Tell the collection view how many cells we need to make
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // We need a collection of n cells (the aglorithm does not include last digit of the specified up-to-num)
-        return receivedNum;
+        // We need a collection of n-1 cells (the aglorithm does not include last digit of the specified up-to-num)
+        // We also want to start from index 1 (so, take out a cell)
+        return receivedNum - 1;
     }
     
     // Tell the collection view about the cell we want to use at a particular index of the collection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cellIndex = indexPath.item
+        // Start from 1, not 0
+        let cellIndex = indexPath.item + 1
         
         // Reference the storyboard cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reusableCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
@@ -73,6 +96,11 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.cellLabel.text = String(cellIndex)
         
         print(cellIndex)
+        
+        // Set the size of the cell so that we can have 10 cells per row
+        cell.frame.size.width  = calcCellSize
+        cell.frame.size.height = calcCellSize
+        
         // Set the background color: 
         // True  ==> Is a prime number     ==> Green
         // False ==> Is not a prime number ==> Red

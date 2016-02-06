@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         
         if (!inputString.isEmpty)
         {
+            // Get range of all characters in the string that are not digits
             let nonDigitRange = inputString.rangeOfCharacterFromSet(nonDigitChars)
             
             // If range of characters in given string has any non-digit characters
