@@ -18,15 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter in a number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-EH-r5w">
-                                <rect key="frame" x="150" y="291" width="300" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="VO4-fB-cYg"/>
-                                    <constraint firstAttribute="height" constant="18" id="xyt-iN-u6a"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineSeparator" translatesAutoresizingMaskIntoConstraints="NO" id="vT4-WF-4nD">
                                 <rect key="frame" x="150" y="320" width="300" height="4"/>
                                 <constraints>
@@ -35,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sieve of Eratosthenes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzI-LI-TgO" userLabel="Title Label">
-                                <rect key="frame" x="147" y="100" width="307" height="48"/>
+                                <rect key="frame" x="147" y="125" width="307" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="307" id="9sV-wn-3Fr"/>
                                     <constraint firstAttribute="height" constant="48" id="oCo-XM-djc"/>
@@ -88,10 +79,19 @@
                                     <constraint firstAttribute="height" constant="45" id="xaw-Js-906"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter in a number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-EH-r5w">
+                                <rect key="frame" x="150" y="291" width="300" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="VO4-fB-cYg"/>
+                                    <constraint firstAttribute="height" constant="18" id="xyt-iN-u6a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="NzI-LI-TgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="0u7-8f-aF2"/>
+                            <constraint firstItem="NzI-LI-TgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="105" id="0u7-8f-aF2"/>
                             <constraint firstItem="z3J-EH-r5w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Hp-kZ-aJ4"/>
                             <constraint firstItem="vT4-WF-4nD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6d5-HS-jT0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lN5-jc-1ln" secondAttribute="trailing" constant="-20" id="87U-7S-5ZO"/>
@@ -107,15 +107,18 @@
                             <constraint firstItem="lN5-jc-1ln" firstAttribute="top" secondItem="x3t-pD-OUS" secondAttribute="bottom" id="oDx-zr-o6q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="numberTextField" destination="z3J-EH-r5w" id="cBj-Hz-IFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="45" y="293"/>
         </scene>
-        <!--View Controller-->
+        <!--Algorithm View Controller-->
         <scene sceneID="Xxi-en-f36">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="PIV-8f-msP" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="PIV-8f-msP" customClass="AlgorithmViewController" customModule="Sieve_of_Eratosthenes_Algorithm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qrn-Tu-shC"/>
                         <viewControllerLayoutGuide type="bottom" id="ZBL-sf-W7f"/>
@@ -161,18 +164,29 @@
                                     <constraint firstAttribute="height" constant="20" id="4kq-yx-8x7"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwJ-st-gx2">
+                                <rect key="frame" x="279" y="93" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="B5d-ad-FCC" firstAttribute="top" secondItem="Qrn-Tu-shC" secondAttribute="bottom" id="0kJ-gM-SU4"/>
                             <constraint firstItem="yBi-ad-WSv" firstAttribute="top" secondItem="Qrn-Tu-shC" secondAttribute="bottom" constant="-20" id="29F-L4-c6p"/>
                             <constraint firstItem="B5d-ad-FCC" firstAttribute="top" secondItem="yBi-ad-WSv" secondAttribute="bottom" id="BD6-AP-eAy"/>
+                            <constraint firstItem="hwJ-st-gx2" firstAttribute="centerX" secondItem="7XW-If-7Gx" secondAttribute="centerX" id="Nfl-gS-C7L"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yBi-ad-WSv" secondAttribute="trailing" constant="-21" id="OHQ-g9-TAJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B5d-ad-FCC" secondAttribute="trailing" constant="-20" id="SLI-5g-LOT"/>
+                            <constraint firstItem="hwJ-st-gx2" firstAttribute="top" secondItem="B5d-ad-FCC" secondAttribute="bottom" constant="28" id="SLR-H0-3Kg"/>
                             <constraint firstItem="yBi-ad-WSv" firstAttribute="leading" secondItem="7XW-If-7Gx" secondAttribute="leadingMargin" constant="-20" id="fL9-Ax-Zo7"/>
                             <constraint firstItem="B5d-ad-FCC" firstAttribute="leading" secondItem="7XW-If-7Gx" secondAttribute="leadingMargin" constant="-20" id="r0p-Ua-CRv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="hwJ-st-gx2" id="Ar6-JF-rqe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1R4-hQ-sWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

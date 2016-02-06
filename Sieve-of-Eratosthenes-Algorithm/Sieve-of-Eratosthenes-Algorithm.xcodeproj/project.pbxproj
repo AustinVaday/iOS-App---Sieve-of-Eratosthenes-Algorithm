@@ -15,6 +15,7 @@
 		FF0572411C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0572401C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmTests.swift */; };
 		FF05724C1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05724B1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift */; };
 		FF05725A1C628F27009FD842 /* SieveOfEratosthenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */; };
+		FF05725C1C657453009FD842 /* AlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05725B1C657453009FD842 /* AlgorithmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FF05724B1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sieve_of_Eratosthenes_AlgorithmUITests.swift; sourceTree = "<group>"; };
 		FF05724D1C617478009FD842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SieveOfEratosthenes.swift; sourceTree = "<group>"; };
+		FF05725B1C657453009FD842 /* AlgorithmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				FF05722B1C617478009FD842 /* AppDelegate.swift */,
 				FF05722D1C617478009FD842 /* ViewController.swift */,
+				FF05725B1C657453009FD842 /* AlgorithmViewController.swift */,
 				FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */,
 				FF05722F1C617478009FD842 /* Main.storyboard */,
 				FF0572321C617478009FD842 /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 			files = (
 				FF05722E1C617478009FD842 /* ViewController.swift in Sources */,
 				FF05722C1C617478009FD842 /* AppDelegate.swift in Sources */,
+				FF05725C1C657453009FD842 /* AlgorithmViewController.swift in Sources */,
 				FF05725A1C628F27009FD842 /* SieveOfEratosthenes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +492,7 @@
 				FF0572521C617478009FD842 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF0572531C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-AlgorithmTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				FF0572551C617478009FD842 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF0572561C617478009FD842 /* Build configuration list for PBXNativeTarget "Sieve-of-Eratosthenes-AlgorithmUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				FF0572581C617478009FD842 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
