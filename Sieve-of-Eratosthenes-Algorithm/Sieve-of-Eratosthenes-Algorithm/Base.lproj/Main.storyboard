@@ -170,12 +170,55 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-c7-TtA">
+                                <rect key="frame" x="10" y="130" width="580" height="462"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ozT-S2-ABV">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="numberCell" id="NcO-MO-niP" customClass="NumberCollectionViewCell" customModule="Sieve_of_Eratosthenes_Algorithm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-qZ-C5Z">
+                                                    <rect key="frame" x="20" y="14" width="11" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="nd6-qZ-C5Z" firstAttribute="centerY" secondItem="NcO-MO-niP" secondAttribute="centerY" id="8fc-vc-Quq"/>
+                                            <constraint firstItem="nd6-qZ-C5Z" firstAttribute="centerX" secondItem="NcO-MO-niP" secondAttribute="centerX" id="UhS-jj-MpB"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="nd6-qZ-C5Z" id="NF8-nm-0Je"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="PIV-8f-msP" id="Fwk-4U-nxx"/>
+                                    <outlet property="delegate" destination="PIV-8f-msP" id="ZBL-al-Kyy"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="B5d-ad-FCC" firstAttribute="top" secondItem="Qrn-Tu-shC" secondAttribute="bottom" id="0kJ-gM-SU4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bN3-c7-TtA" secondAttribute="trailing" constant="-10" id="1da-sm-geu"/>
+                            <constraint firstItem="bN3-c7-TtA" firstAttribute="top" secondItem="hwJ-st-gx2" secondAttribute="bottom" constant="16" id="1he-bk-ZFD"/>
                             <constraint firstItem="yBi-ad-WSv" firstAttribute="top" secondItem="Qrn-Tu-shC" secondAttribute="bottom" constant="-20" id="29F-L4-c6p"/>
+                            <constraint firstItem="ZBL-sf-W7f" firstAttribute="top" secondItem="bN3-c7-TtA" secondAttribute="bottom" constant="8" id="6yw-UP-A6W"/>
                             <constraint firstItem="B5d-ad-FCC" firstAttribute="top" secondItem="yBi-ad-WSv" secondAttribute="bottom" id="BD6-AP-eAy"/>
+                            <constraint firstItem="bN3-c7-TtA" firstAttribute="leading" secondItem="7XW-If-7Gx" secondAttribute="leadingMargin" constant="-10" id="MNN-h4-bJp"/>
                             <constraint firstItem="hwJ-st-gx2" firstAttribute="centerX" secondItem="7XW-If-7Gx" secondAttribute="centerX" id="Nfl-gS-C7L"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yBi-ad-WSv" secondAttribute="trailing" constant="-21" id="OHQ-g9-TAJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B5d-ad-FCC" secondAttribute="trailing" constant="-20" id="SLI-5g-LOT"/>

@@ -9,5 +9,8 @@
 import UIKit
 
 class NumberCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    
 
 }
