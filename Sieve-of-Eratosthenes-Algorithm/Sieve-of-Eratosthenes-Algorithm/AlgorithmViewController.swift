@@ -68,7 +68,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // Tell the collection view about the size of our cells
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-                
+        
         // Set the size of the cell so that we can have 10 cells per row
         return CGSize(width: calcCellSize, height: calcCellSize)
     }
@@ -97,9 +97,9 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         print(cellIndex)
         
-        // Set the size of the cell so that we can have 10 cells per row
-        cell.frame.size.width  = calcCellSize
-        cell.frame.size.height = calcCellSize
+//        // Set the size of the cell so that we can have 10 cells per row
+//        cell.frame.size.width  = calcCellSize
+//        cell.frame.size.height = calcCellSize
         
         // Set the background color: 
         // True  ==> Is a prime number     ==> Green
