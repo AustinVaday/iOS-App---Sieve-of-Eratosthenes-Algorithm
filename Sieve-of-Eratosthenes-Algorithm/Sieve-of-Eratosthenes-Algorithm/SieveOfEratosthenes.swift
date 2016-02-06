@@ -28,7 +28,7 @@ class SieveOfEratosthenses
         // If number is 0 or negative, log an error to console
         if (newUpToNum <= 0)
         {
-            print("SieveOfEratosthenes initialized with invalid upToNum of ", upToNum)
+            print("SieveOfEratosthenes initialized with invalid upToNum of ", newUpToNum)
             print("Continuing with default upToNum: ", UP_TO_NUM_DEFAULT)
             
             // Set back to default state of UP_TO_NUM_DEFAULT
@@ -139,8 +139,15 @@ class SieveOfEratosthenses
         listOfNums = Array<Bool>(count: upToNum, repeatedValue: true)
         
         // Set 0 and 1 to be not prime, because our algorithm does not involve these indices
-        listOfNums[0] = false
-        listOfNums[1] = false
+        if (upToNum > 0)
+        {
+            listOfNums[0] = false
+        }
+        
+        if (upToNum > 1)
+        {
+            listOfNums[1] = false
+        }
     }
 
     func outputListOfNums()

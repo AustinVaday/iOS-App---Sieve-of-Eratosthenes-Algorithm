@@ -16,6 +16,7 @@
 		FF05724C1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05724B1C617478009FD842 /* Sieve_of_Eratosthenes_AlgorithmUITests.swift */; };
 		FF05725A1C628F27009FD842 /* SieveOfEratosthenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */; };
 		FF05725C1C657453009FD842 /* AlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05725B1C657453009FD842 /* AlgorithmViewController.swift */; };
+		FF05725E1C657E6B009FD842 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05725D1C657E6B009FD842 /* NumberCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FF05724D1C617478009FD842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SieveOfEratosthenes.swift; sourceTree = "<group>"; };
 		FF05725B1C657453009FD842 /* AlgorithmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmViewController.swift; sourceTree = "<group>"; };
+		FF05725D1C657E6B009FD842 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FF05725B1C657453009FD842 /* AlgorithmViewController.swift */,
 				FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */,
 				FF05722F1C617478009FD842 /* Main.storyboard */,
+				FF05725D1C657E6B009FD842 /* NumberCollectionViewCell.swift */,
 				FF0572321C617478009FD842 /* Assets.xcassets */,
 				FF0572341C617478009FD842 /* LaunchScreen.storyboard */,
 				FF0572371C617478009FD842 /* Info.plist */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF05725E1C657E6B009FD842 /* NumberCollectionViewCell.swift in Sources */,
 				FF05722E1C617478009FD842 /* ViewController.swift in Sources */,
 				FF05722C1C617478009FD842 /* AppDelegate.swift in Sources */,
 				FF05725C1C657453009FD842 /* AlgorithmViewController.swift in Sources */,
