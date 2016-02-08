@@ -139,11 +139,11 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro2-5m-gKH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro2-5m-gKH">
                                         <rect key="frame" x="20" y="10" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="Sqv-zQ-ECd"/>
-                                            <constraint firstAttribute="height" constant="30" id="TzY-c6-OD9"/>
+                                            <constraint firstAttribute="width" constant="25" id="Sqv-zQ-ECd"/>
+                                            <constraint firstAttribute="height" constant="25" id="TzY-c6-OD9"/>
                                         </constraints>
                                         <state key="normal" image="backArrow"/>
                                         <connections>
@@ -156,7 +156,7 @@
                                     <constraint firstItem="iY5-wu-Hr9" firstAttribute="centerX" secondItem="B5d-ad-FCC" secondAttribute="centerX" id="BPv-Le-w0C"/>
                                     <constraint firstItem="iY5-wu-Hr9" firstAttribute="centerY" secondItem="B5d-ad-FCC" secondAttribute="centerY" id="PxW-20-9cg"/>
                                     <constraint firstItem="Ro2-5m-gKH" firstAttribute="leading" secondItem="B5d-ad-FCC" secondAttribute="leading" constant="20" id="QeC-EQ-wJP"/>
-                                    <constraint firstItem="Ro2-5m-gKH" firstAttribute="top" secondItem="B5d-ad-FCC" secondAttribute="top" constant="6" id="YUy-JD-YOb"/>
+                                    <constraint firstItem="Ro2-5m-gKH" firstAttribute="top" secondItem="B5d-ad-FCC" secondAttribute="top" constant="10" id="YUy-JD-YOb"/>
                                     <constraint firstAttribute="height" constant="45" id="aNj-ic-qaz"/>
                                 </constraints>
                             </view>
@@ -176,6 +176,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-xW-Tju">
+                                <rect key="frame" x="0.0" y="572" width="601" height="29"/>
+                                <color key="backgroundColor" red="0.9664681692" green="1" blue="0.95550891299999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Prime Numbers"/>
+                                    <segment title="All Numbers"/>
+                                    <segment title="Composite Numbers"/>
+                                </segments>
+                                <color key="tintColor" red="0.058823529409999999" green="0.44833489599999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onSegmentedControlValueChanged:" destination="PIV-8f-msP" eventType="valueChanged" id="N5m-r7-2Xc"/>
+                                </connections>
+                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-c7-TtA">
                                 <rect key="frame" x="20" y="130" width="560" height="442"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -218,19 +231,6 @@
                                     <outlet property="delegate" destination="PIV-8f-msP" id="ZBL-al-Kyy"/>
                                 </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-xW-Tju">
-                                <rect key="frame" x="0.0" y="572" width="601" height="29"/>
-                                <color key="backgroundColor" red="0.9664681692" green="1" blue="0.95550891299999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <segments>
-                                    <segment title="Prime Numbers"/>
-                                    <segment title="All Numbers"/>
-                                    <segment title="Composite Numbers"/>
-                                </segments>
-                                <color key="tintColor" red="0.058823529409999999" green="0.44833489599999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="onSegmentedControlValueChanged:" destination="PIV-8f-msP" eventType="valueChanged" id="N5m-r7-2Xc"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

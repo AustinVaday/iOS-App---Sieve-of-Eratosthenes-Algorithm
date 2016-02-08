@@ -9,6 +9,14 @@
 import UIKit
 
 
+// Constants for segmented control, raw type of Int
+enum SegmentedControlEnum : Int
+{
+    case PRIME_NUM_SEGMENT
+    case ALL_NUM_SEGMENT
+    case COMPOSITE_NUM_SEGMENT
+}
+
 class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var numberLabel: UILabel!
@@ -23,21 +31,15 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     var collectionViewWidth: CGFloat!
     var calcCellSize: CGFloat!
     
+    // Display all numbers by default
+    var segmentedControlType : SegmentedControlEnum = .ALL_NUM_SEGMENT
+    
+    
     let reusableCellIdentifier = "numberCell"
     let minCellSpacing = CGFloat(3)
     let numCellPerRow  = CGFloat(10)
     let collectionViewPadding = CGFloat(20+20)
-    
-    // Constants for segmented control, raw type of Int
-    enum SegmentedControlEnum : Int
-    {
-        case PRIME_NUM_SEGMENT
-        case ALL_NUM_SEGMENT
-        case COMPOSITE_NUM_SEGMENT
-    }
-//    let PRIME_NUM_SEGMENT       = 0
-//    let ALL_NUM_SEGMENT         = 1
-//    let COMPOSITE_NUM_SEGMENT   = 2
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +83,95 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     // Tell the collection view about the size of our cells
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        // Set the size of the cell so that we can have 10 cells per row
-        return CGSize(width: calcCellSize, height: calcCellSize)
+        // Set the default size of the cell so that we can have 10 cells per row
+        var cellSize : CGSize = CGSize(width: calcCellSize, height: calcCellSize)
+        
+        // Start from 1, not 0
+        let cellIndex = indexPath.item + 1
+        
+        // Set size of cells based on which type of numbers to display
+        switch segmentedControlType
+        {
+            case .PRIME_NUM_SEGMENT:
+                
+                print ("DISPLAY PRIME ONLY")
+                
+                // If the cell is not prime number, set its size to 0
+                // as to "hide" it
+                if (!sieveArray[cellIndex])
+                {
+                    cellSize.width = 0
+                }
+                
+                break
+            case .ALL_NUM_SEGMENT:
+                
+                print ("DISPLAY ALL NUMS")
+                
+                break
+            case .COMPOSITE_NUM_SEGMENT:
+                
+                print ("DISPLAY COMPOSITE ONLY")
+                
+                // If the cell is a prime number, set its size to 0
+                // as to "hide" it
+                if (sieveArray[cellIndex])
+                {
+                    cellSize.width = 0
+                }
+                
+                break
+        }
+        
+        return cellSize
     }
     
+//    // Tell the collection view how much space we want between our cells. This varies depending on which segmented mode we're in
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+//        
+//        
+//        var newMinSpacing:CGFloat!
+//        
+//        // Start from 1, not 0
+//        let cellIndex = section.
+//        
+//        // Set spacing based on whether cell is hidden or not
+//        switch segmentedControlType
+//        {
+//        case .PRIME_NUM_SEGMENT:
+//            
+//            print ("DISPLAY PRIME ONLY")
+//            
+//            // If the cell is not prime number, set its size to 0
+//            // as to "hide" it
+//            if (!sieveArray[cellIndex])
+//            {
+//                
+//            }
+//            
+//            break
+//        case .ALL_NUM_SEGMENT:
+//            
+//            print ("DISPLAY ALL NUMS")
+//            
+//            break
+//        case .COMPOSITE_NUM_SEGMENT:
+//            
+//            print ("DISPLAY COMPOSITE ONLY")
+//            
+//            // If the cell is a prime number, set its size to 0
+//            // as to "hide" it
+//            if (sieveArray[cellIndex])
+//            {
+//                cellSize.width = 0.001
+//                cellSize.height=0.001
+//            }
+//            
+//            break
+//        }
+//
+//        return newMinSpacing
+//    }
     
     
     // Tell the collection view how many cells we need to make
@@ -148,32 +235,12 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // Segmented control functionality
     @IBAction func onSegmentedControlValueChanged(sender: AnyObject) {
-        
+    
         // Store current segmented selection location
-        let segmentedSelection = SegmentedControlEnum(rawValue: numberSegmentedControl.selectedSegmentIndex)!
+        segmentedControlType = SegmentedControlEnum(rawValue: numberSegmentedControl.selectedSegmentIndex)!
 
-        switch segmentedSelection
-        {
-        case .PRIME_NUM_SEGMENT:
-            
-            print ("DISPLAY PRIME ONLY")
-            
-            break
-        case .ALL_NUM_SEGMENT:
-            
-            print ("DISPLAY ALL NUMS")
-            
-            break
-        case .COMPOSITE_NUM_SEGMENT:
-            
-            print ("DISPLAY COMPOSITE ONLY")
-            
-            break
-
-        }
-        
-        
-        
+        // Invalidate layout so we can update/remove/add cells as requested
+        numberCollectionView.collectionViewLayout.invalidateLayout()
         
     }
     
