@@ -176,16 +176,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-xW-Tju">
-                                <rect key="frame" x="0.0" y="572" width="601" height="29"/>
-                                <color key="backgroundColor" red="0.9664681692" green="1" blue="0.95550891299999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title="Third"/>
-                                </segments>
-                                <color key="tintColor" red="0.058823529409999999" green="0.44833489599999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-c7-TtA">
                                 <rect key="frame" x="20" y="130" width="560" height="442"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -228,6 +218,19 @@
                                     <outlet property="delegate" destination="PIV-8f-msP" id="ZBL-al-Kyy"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-xW-Tju">
+                                <rect key="frame" x="0.0" y="572" width="601" height="29"/>
+                                <color key="backgroundColor" red="0.9664681692" green="1" blue="0.95550891299999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Prime Numbers"/>
+                                    <segment title="All Numbers"/>
+                                    <segment title="Composite Numbers"/>
+                                </segments>
+                                <color key="tintColor" red="0.058823529409999999" green="0.44833489599999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onSegmentedControlValueChanged:" destination="PIV-8f-msP" eventType="valueChanged" id="N5m-r7-2Xc"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -252,6 +255,7 @@
                     <connections>
                         <outlet property="numberCollectionView" destination="bN3-c7-TtA" id="0G3-El-gNw"/>
                         <outlet property="numberLabel" destination="hwJ-st-gx2" id="Ar6-JF-rqe"/>
+                        <outlet property="numberSegmentedControl" destination="AZo-xW-Tju" id="cVY-f7-x7R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1R4-hQ-sWS" userLabel="First Responder" sceneMemberID="firstResponder"/>

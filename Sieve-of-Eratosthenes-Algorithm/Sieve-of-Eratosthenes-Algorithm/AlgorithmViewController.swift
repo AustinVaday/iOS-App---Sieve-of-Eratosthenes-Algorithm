@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var numberCollectionView: UICollectionView!
+    @IBOutlet weak var numberSegmentedControl: UISegmentedControl!
     
     // This string will store data being passed from ViewController
     var receivedString: String!
@@ -26,6 +28,16 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     let numCellPerRow  = CGFloat(10)
     let collectionViewPadding = CGFloat(20+20)
     
+    // Constants for segmented control, raw type of Int
+    enum SegmentedControlEnum : Int
+    {
+        case PRIME_NUM_SEGMENT
+        case ALL_NUM_SEGMENT
+        case COMPOSITE_NUM_SEGMENT
+    }
+//    let PRIME_NUM_SEGMENT       = 0
+//    let ALL_NUM_SEGMENT         = 1
+//    let COMPOSITE_NUM_SEGMENT   = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,10 +119,16 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         if (sieveArray[cellIndex])
         {
             cell.backgroundColor = UIColor.greenColor()
+            
+            // Make cells circular
+            cell.layer.cornerRadius = cell.frame.size.width / 2
         }
         else
         {
             cell.backgroundColor = UIColor.redColor()
+            
+            // Make cells square
+            cell.layer.cornerRadius = 0
         }
         
         // -- Modify cell attributes further --
@@ -121,13 +139,44 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Increase border thickness
         cell.layer.borderWidth = 2.0
         
-        // Make cells circular
-        cell.layer.cornerRadius = cell.frame.size.width / 2
+
         
         
         
         return cell
     }
+    
+    // Segmented control functionality
+    @IBAction func onSegmentedControlValueChanged(sender: AnyObject) {
+        
+        // Store current segmented selection location
+        let segmentedSelection = SegmentedControlEnum(rawValue: numberSegmentedControl.selectedSegmentIndex)!
+
+        switch segmentedSelection
+        {
+        case .PRIME_NUM_SEGMENT:
+            
+            print ("DISPLAY PRIME ONLY")
+            
+            break
+        case .ALL_NUM_SEGMENT:
+            
+            print ("DISPLAY ALL NUMS")
+            
+            break
+        case .COMPOSITE_NUM_SEGMENT:
+            
+            print ("DISPLAY COMPOSITE ONLY")
+            
+            break
+
+        }
+        
+        
+        
+        
+    }
+    
     
         
         
