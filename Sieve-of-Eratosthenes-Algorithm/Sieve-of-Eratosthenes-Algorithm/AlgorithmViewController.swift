@@ -36,7 +36,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     
     let reusableCellIdentifier = "numberCell"
-    let minCellSpacing = CGFloat(3)
+    let minCellSpacing = CGFloat(0)
     let numCellPerRow  = CGFloat(10)
     let collectionViewPadding = CGFloat(20+20)
 
@@ -126,20 +126,20 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         return cellSize
     }
     
-        // Tell the collection view how much space we want between our cells. This varies depending on which segmented mode we're in
-        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-    
-    
-    
-            if (segmentedControlType == .PRIME_NUM_SEGMENT || segmentedControlType == .COMPOSITE_NUM_SEGMENT)
-            {
-                return 0
-            }
-            else
-            {
-                return minCellSpacing
-            }
-        }
+//        // Tell the collection view how much space we want between our cells. This varies depending on which segmented mode we're in
+//        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+//    
+//    
+//    
+//            if (segmentedControlType == .PRIME_NUM_SEGMENT || segmentedControlType == .COMPOSITE_NUM_SEGMENT)
+//            {
+//                return 0
+//            }
+//            else
+//            {
+//                return minCellSpacing
+//            }
+//        }
     
     
     // Tell the collection view how many cells we need to make
