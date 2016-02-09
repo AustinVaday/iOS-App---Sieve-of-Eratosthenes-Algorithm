@@ -138,6 +138,8 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     // Tell the collection view about the cell we want to use at a particular index of the collection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
        
+        // Border thickness will vary. Thicker border => prime.
+        var borderThickness: CGFloat = 2.0
         
         // Reference the storyboard cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reusableCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
@@ -157,21 +159,11 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
             if (sieveArray[cellIndex])
             {
                 cell.backgroundColor = UIColor.greenColor()
-                
-                //TODO: Color-blind flag
-                //            cell.cellLabel.textColor = UIColor.blackColor()
-                
+                borderThickness = 3.0
             }
             else
             {
                 cell.backgroundColor = UIColor.redColor()
-                
-                //TODO: Color-blind flag
-                //            // Set the cell's text label to white color so that numbers are visible
-                //            cell.cellLabel.textColor = UIColor.whiteColor()
-                
-                //            // Make cells square
-                //            cell.layer.cornerRadius = 0
             }
         }
         else if (collectionView.isEqual(primeCollectionView))
@@ -182,6 +174,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
             cell.cellLabel.text = String(primeNumsArray[cellIndex])
             
             cell.backgroundColor = UIColor.greenColor()
+            borderThickness = 3.0
 
         }
         else if (collectionView.isEqual(compositeCollectionView))
@@ -203,8 +196,8 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Set border color to black
         cell.layer.borderColor = UIColor.blackColor().CGColor
         
-        // Increase border thickness
-        cell.layer.borderWidth = 2.0
+        // Border width varies on the number
+        cell.layer.borderWidth = borderThickness
         
         return cell
     }
