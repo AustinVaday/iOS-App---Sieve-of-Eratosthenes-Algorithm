@@ -83,30 +83,13 @@ class ViewController: UIViewController {
         if (numberTextFieldString.isEmpty)
         {
             // Create alert to send to user
-            let alert = UIAlertController(title: "Please try again...", message: "You must enter in a number.", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            // Create the action to add to alert
-            let alertAction = UIAlertAction(title: "Try again", style: UIAlertActionStyle.Default, handler: nil)
-            
-            // Add the action to the alert
-            alert.addAction(alertAction)
-            
-            showViewController(alert, sender: self)
-
+            showAlert( "Please try again...", message: "You must enter in a number.", buttonTitle: "Try again", sender: self)
         }
         // If too many digits
         else if (numberTextFieldString.characters.count > maxNumInput)
         {
             // Create alert to send to user
-            let alert = UIAlertController(title: "Please try again...", message: "Sorry, the number of digits you specified is too big.", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            // Create the action to add to alert
-            let alertAction = UIAlertAction(title: "Try again", style: UIAlertActionStyle.Default, handler: nil)
-            
-            // Add the action to the alert
-            alert.addAction(alertAction)
-            
-            showViewController(alert, sender: self)
+             showAlert( "Please try again...", message: "Sorry, the number of digits you specified is too big.", buttonTitle: "Try again", sender: self)
         }
         else
         {

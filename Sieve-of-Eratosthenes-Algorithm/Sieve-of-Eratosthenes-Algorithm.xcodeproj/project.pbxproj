@@ -17,6 +17,7 @@
 		FF05725A1C628F27009FD842 /* SieveOfEratosthenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */; };
 		FF05725C1C657453009FD842 /* AlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05725B1C657453009FD842 /* AlgorithmViewController.swift */; };
 		FF05725E1C657E6B009FD842 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF05725D1C657E6B009FD842 /* NumberCollectionViewCell.swift */; };
+		FF8E32001C69B94E00141CDD /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E31FF1C69B94E00141CDD /* HelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FF0572591C628F27009FD842 /* SieveOfEratosthenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SieveOfEratosthenes.swift; sourceTree = "<group>"; };
 		FF05725B1C657453009FD842 /* AlgorithmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmViewController.swift; sourceTree = "<group>"; };
 		FF05725D1C657E6B009FD842 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF8E31FF1C69B94E00141CDD /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				FF0572321C617478009FD842 /* Assets.xcassets */,
 				FF0572341C617478009FD842 /* LaunchScreen.storyboard */,
 				FF0572371C617478009FD842 /* Info.plist */,
+				FF8E31FF1C69B94E00141CDD /* HelperFunctions.swift */,
 			);
 			path = "Sieve-of-Eratosthenes-Algorithm";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				FF05722C1C617478009FD842 /* AppDelegate.swift in Sources */,
 				FF05725C1C657453009FD842 /* AlgorithmViewController.swift in Sources */,
 				FF05725A1C628F27009FD842 /* SieveOfEratosthenes.swift in Sources */,
+				FF8E32001C69B94E00141CDD /* HelperFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
