@@ -25,9 +25,12 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // This string will store data being passed from ViewController
     var receivedString: String!
-    var receivedNum: Int!
+    // Stores object passed in from ViewController
     var sieveObj: SieveOfEratosthenses!
+    var receivedNum: Int!
     var sieveArray: Array<Bool>!
+    var primeNumsArray: Array<Int>!
+    var compositeNumsArray: Array<Int>!
     var collectionViewWidth: CGFloat!
     var calcCellSize: CGFloat!
     
@@ -50,14 +53,25 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Convert string to number
         receivedNum = Int(receivedString)
         
+        /*
         // Create object with the receivedNum
         sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
         
-        sieveObj.computeSieveOfEratosthenses()
+        // Perform long-running operation on background thread
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            self.sieveObj.computeSieveOfEratosthenses()
+        }
+        */
+        
+        print(sieveObj.returnListOfNums().count)
         
         // Generate the sieveArray that holds all true/false values
         // (information whether an index/number is prime or not)
         sieveArray = sieveObj.returnListOfNums()
+        
+        // Store prime and nonprime arrays, too
+        primeNumsArray     = sieveObj.returnListOfPrimeNums()
+        compositeNumsArray = sieveObj.returnListOfCompositeNums()
         
         // Store the width of the collection view so that we can programatically 
         // enforce 10 numbers per row
@@ -126,22 +140,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         return cellSize
     }
     
-//        // Tell the collection view how much space we want between our cells. This varies depending on which segmented mode we're in
-//        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-//    
-//    
-//    
-//            if (segmentedControlType == .PRIME_NUM_SEGMENT || segmentedControlType == .COMPOSITE_NUM_SEGMENT)
-//            {
-//                return 0
-//            }
-//            else
-//            {
-//                return minCellSpacing
-//            }
-//        }
-    
-    
     // Tell the collection view how many cells we need to make
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -174,7 +172,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
             
             //TODO: Color-blind flag
 //            cell.cellLabel.textColor = UIColor.blackColor()
-
 
         }
         else
@@ -220,10 +217,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
     }
     
-    
-        
-        
-        
-        
+
 }
     

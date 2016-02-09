@@ -42,6 +42,9 @@ class SieveOfEratosthenses
         // Generate a new list for private class variable, listOfNums
         generateNewListOfNums(upToNum)
         
+        listOfPrimeNums = Array<Int>()
+        listOfCompositeNums = Array<Int>()
+        
         //outputListOfNums()
         
     }
@@ -120,6 +123,19 @@ class SieveOfEratosthenses
             }
             
         }
+        
+        // Fill up other arrays on the fly
+        for (var i = 0; i < size; i++)
+        {
+            if (listOfNums[i])
+            {
+                listOfPrimeNums.append(i)
+            }
+            else
+            {
+                listOfCompositeNums.append(i)
+            }
+        }
     }
     
     // Wrapper class for the algorithm
@@ -133,6 +149,16 @@ class SieveOfEratosthenses
     func returnListOfNums() -> Array<Bool>
     {
         return listOfNums
+    }
+    
+    func returnListOfPrimeNums() -> Array<Int>
+    {
+        return listOfPrimeNums
+    }
+    
+    func returnListOfCompositeNums() -> Array<Int>
+    {
+        return listOfCompositeNums
     }
     
     
@@ -184,7 +210,9 @@ class SieveOfEratosthenses
      * Variables
      **********************************************/
     private var upToNum: Int!
-    private var listOfNums: Array<Bool>! // TRUE: Not prime; FALSE: Prime
+    private var listOfNums: Array<Bool>!        // TRUE: Not prime; FALSE: Prime
+    private var listOfPrimeNums: Array<Int>!    // A listing of all prime numbers
+    private var listOfCompositeNums:Array<Int>! // A listing of all non-prime numbers
     
 }
 
