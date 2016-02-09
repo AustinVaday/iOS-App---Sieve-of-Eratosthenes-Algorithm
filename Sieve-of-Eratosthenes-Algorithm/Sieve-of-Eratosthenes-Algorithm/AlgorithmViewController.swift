@@ -126,52 +126,20 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         return cellSize
     }
     
-//    // Tell the collection view how much space we want between our cells. This varies depending on which segmented mode we're in
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-//        
-//        
-//        var newMinSpacing:CGFloat!
-//        
-//        // Start from 1, not 0
-//        let cellIndex = section.
-//        
-//        // Set spacing based on whether cell is hidden or not
-//        switch segmentedControlType
-//        {
-//        case .PRIME_NUM_SEGMENT:
-//            
-//            print ("DISPLAY PRIME ONLY")
-//            
-//            // If the cell is not prime number, set its size to 0
-//            // as to "hide" it
-//            if (!sieveArray[cellIndex])
-//            {
-//                
-//            }
-//            
-//            break
-//        case .ALL_NUM_SEGMENT:
-//            
-//            print ("DISPLAY ALL NUMS")
-//            
-//            break
-//        case .COMPOSITE_NUM_SEGMENT:
-//            
-//            print ("DISPLAY COMPOSITE ONLY")
-//            
-//            // If the cell is a prime number, set its size to 0
-//            // as to "hide" it
-//            if (sieveArray[cellIndex])
-//            {
-//                cellSize.width = 0.001
-//                cellSize.height=0.001
-//            }
-//            
-//            break
-//        }
-//
-//        return newMinSpacing
-//    }
+        // Tell the collection view how much space we want between our cells. This varies depending on which segmented mode we're in
+        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    
+    
+    
+            if (segmentedControlType == .PRIME_NUM_SEGMENT || segmentedControlType == .COMPOSITE_NUM_SEGMENT)
+            {
+                return 0
+            }
+            else
+            {
+                return minCellSpacing
+            }
+        }
     
     
     // Tell the collection view how many cells we need to make
@@ -185,6 +153,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     // Tell the collection view about the cell we want to use at a particular index of the collection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
+        
         // Start from 1, not 0
         let cellIndex = indexPath.item + 1
         
@@ -196,38 +165,37 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         print(cellIndex)
         
-//        // Set the size of the cell so that we can have 10 cells per row
-//        cell.frame.size.width  = calcCellSize
-//        cell.frame.size.height = calcCellSize
-        
         // Set the background color: 
         // True  ==> Is a prime number     ==> Green
         // False ==> Is not a prime number ==> Red
         if (sieveArray[cellIndex])
         {
             cell.backgroundColor = UIColor.greenColor()
-            
-            // Make cells circular
-            cell.layer.cornerRadius = cell.frame.size.width / 2
+
         }
         else
         {
             cell.backgroundColor = UIColor.redColor()
             
-            // Make cells square
-            cell.layer.cornerRadius = 0
+//            // Make cells square
+//            cell.layer.cornerRadius = 0
         }
         
         // -- Modify cell attributes further --
+        
+        // Make cells circular
+        if (cell.frame.size.height == 0.0)
+        {
+            print("Warning: Attempting to create a circle cell from a cell with no height.")
+        }
+        
+        cell.layer.cornerRadius = cell.frame.size.height / 2
         
         // Set border color to black
         cell.layer.borderColor = UIColor.blackColor().CGColor
         
         // Increase border thickness
         cell.layer.borderWidth = 2.0
-        
-
-        
         
         
         return cell
