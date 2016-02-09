@@ -48,7 +48,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     let numCellPerRow    =  CGFloat(10)
     let minNumCellPerRow = CGFloat(5)
     let collectionViewPadding = CGFloat(20+20)
-    let partitionAmount  = 5000
+    let partitionMax  = 10000
 
 
     
@@ -72,19 +72,37 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         */
         
         
+        // If the up-to-num given is less than the partition max, just perform the algorithm for that number
+        if (receivedNum < partitionMax)
+        {
+            sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
+            sieveObj.computeSieveOfEratosthenses()
+
+        }
+        else // Partition the work accordingly, but perform first partition right now.
+        {
+            print("Begin else.")
+            sieveObj = SieveOfEratosthenses(newUpToNum: partitionMax)
+            print("After object is generated")
+            // Compute rest asynchronously on background thread, immediately after the first partition
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
+                
+                print("Begin threading")
+                self.sieveObj.computeSieveOfEratosthenses()
+                
+                // Update arrays when this thread operation finishes
+                self.updateAllSieveArrays()
+                print("End threading")
+
+            }
+        }
+
         
-        sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
-        sieveObj.computeSieveOfEratosthenses()
-        
-        // Generate the sieveArray that holds all true/false values
-        // (information whether an index/number is prime or not)
-        sieveArray = sieveObj.returnListOfNums()
-        
-        // Store respective prime and nonprime arrays, too
-        primeNumsArray     = sieveObj.returnListOfPrimeNums()
-        compositeNumsArray = sieveObj.returnListOfCompositeNums()
-        
-        // Store the width of the collection view so that we can programatically 
+        // Update numbers, primes, and composite arrays
+        updateAllSieveArrays()
+
+
+        // Store the width of the collection view so that we can programatically
         // enforce 10 numbers per row
         collectionViewWidth = UIScreen.mainScreen().bounds.width - collectionViewPadding
         
@@ -98,11 +116,11 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         }
 
         
-        print(calcCellSize)
-        
         // Since default segment is "All Numbers", make sure other collectionViews are hidden
         primeCollectionView.hidden      = true
         compositeCollectionView.hidden  = true
+        
+        print("End of function")
         
     }
     
@@ -261,6 +279,16 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
     }
     
+    func updateAllSieveArrays()
+    {
+        // Generate the sieveArray that holds all true/false values
+        // (information whether an index/number is prime or not)
+        sieveArray = sieveObj.returnListOfNums()
+        
+        // Store respective prime and nonprime arrays, too
+        primeNumsArray     = sieveObj.returnListOfPrimeNums()
+        compositeNumsArray = sieveObj.returnListOfCompositeNums()
+    }
 
 }
-    
+

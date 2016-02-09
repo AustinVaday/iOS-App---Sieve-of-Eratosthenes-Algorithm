@@ -108,12 +108,12 @@ class ViewController: UIViewController {
             // Create alert to send to user
             showAlert( "Please try again...", message: "You must enter in a number.", buttonTitle: "Try again", sender: self)
         }
-        // If too many digits
-        else if (numberTextFieldString.characters.count > maxNumInput)
-        {
-            // Create alert to send to user
-             showAlert( "Please try again...", message: "Sorry, the number of digits you specified is too big.", buttonTitle: "Try again", sender: self)
-        }
+//        // If too many digits
+//        else if (numberTextFieldString.characters.count > maxNumInput)
+//        {
+//            // Create alert to send to user
+//             showAlert( "Please try again...", message: "Sorry, the number of digits you specified is too big.", buttonTitle: "Try again", sender: self)
+//        }
         else
         {
             performSegueWithIdentifier("toAlgorithmSegue", sender: nil)

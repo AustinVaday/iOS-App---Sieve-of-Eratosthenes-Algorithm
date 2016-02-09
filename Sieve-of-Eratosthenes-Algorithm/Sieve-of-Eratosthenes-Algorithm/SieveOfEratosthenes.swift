@@ -124,18 +124,6 @@ class SieveOfEratosthenses
             
         }
         
-        // Fill up other arrays on the fly, ignore the number 0
-        for (var i = 1; i < size; i++)
-        {
-            if (listOfNums[i])
-            {
-                listOfPrimeNums.append(i)
-            }
-            else
-            {
-                listOfCompositeNums.append(i)
-            }
-        }
     }
     
     // Wrapper class for the algorithm
@@ -153,11 +141,34 @@ class SieveOfEratosthenses
     
     func returnListOfPrimeNums() -> Array<Int>
     {
+        let size    : Int = listOfNums.count
+
+        // Fill up other arrays on the fly, ignore the number 0
+        for (var i = 1; i < size; i++)
+        {
+            // If true, it is prime
+            if (listOfNums[i])
+            {
+                listOfPrimeNums.append(i)
+            }
+        }
+        
         return listOfPrimeNums
     }
     
     func returnListOfCompositeNums() -> Array<Int>
     {
+        let size    : Int = listOfNums.count
+
+        // Fill up other arrays on the fly, ignore the number 0
+        for (var i = 1; i < size; i++)
+        {
+            // If false, it is composite
+            if (!listOfNums[i])
+            {
+                listOfCompositeNums.append(i)
+            }
+        }
         return listOfCompositeNums
     }
     
