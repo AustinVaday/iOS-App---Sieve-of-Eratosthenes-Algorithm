@@ -43,7 +43,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         // Set the UI text field as the string received from the previous View Controller
         numberLabel.text = receivedString
 
