@@ -20,7 +20,12 @@ enum SegmentedControlEnum : Int
 class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var numberLabel: UILabel!
+    
+    // 3 different collection views to switch between
     @IBOutlet weak var numberCollectionView: UICollectionView!
+
+    @IBOutlet weak var primeCollectionView: UICollectionView!
+    @IBOutlet weak var compositeCollectionView: UICollectionView!
     @IBOutlet weak var numberSegmentedControl: UISegmentedControl!
     
     // This string will store data being passed from ViewController
@@ -46,7 +51,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         // Set the UI text field as the string received from the previous View Controller
         numberLabel.text = receivedString
 
@@ -80,6 +85,11 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Enforce 10 cells per row by calculating how much space there is for each cell
         calcCellSize = (collectionViewWidth - numCellPerRow * minCellSpacing) / numCellPerRow
 
+        
+        // Since default segment is "All Numbers", make sure other collectionViews are hidden
+        primeCollectionView.hidden      = true
+        compositeCollectionView.hidden  = true
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -98,102 +108,98 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         // Set the default size of the cell so that we can have 10 cells per row
-        var cellSize : CGSize = CGSize(width: calcCellSize, height: calcCellSize)
+        return CGSize(width: calcCellSize, height: calcCellSize)
         
-        // Start from 1, not 0
-        let cellIndex = indexPath.item + 1
-        
-        // Set size of cells based on which type of numbers to display
-        switch segmentedControlType
-        {
-            case .PRIME_NUM_SEGMENT:
-                
-                print ("DISPLAY PRIME ONLY")
-                
-                // If the cell is not prime number, set its size to 0
-                // as to "hide" it
-                if (!sieveArray[cellIndex])
-                {
-                    cellSize.width = 0
-                }
-                
-                break
-            case .ALL_NUM_SEGMENT:
-                
-                print ("DISPLAY ALL NUMS")
-                
-                break
-            case .COMPOSITE_NUM_SEGMENT:
-                
-                print ("DISPLAY COMPOSITE ONLY")
-                
-                // If the cell is a prime number, set its size to 0
-                // as to "hide" it
-                if (sieveArray[cellIndex])
-                {
-                    cellSize.width = 0
-                }
-                
-                break
-        }
-        
-        return cellSize
     }
     
-    // Tell the collection view how many cells we need to make
+    // Denote how many cells we need to make for each view
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // We need a collection of n-1 cells (the aglorithm does not include last digit of the specified up-to-num)
-        // We also want to start from index 1 (so, take out a cell)
-        return receivedNum - 1;
+        var sizeNum:Int!
+        
+        print("YEAH")
+        if (collectionView.isEqual(numberCollectionView))
+        {
+            print("NOO")
+            // We need a collection of n-1 cells (the aglorithm does not include last digit of the specified up-to-num)
+            // We also want to start from index 1 (so, take out a cell)
+            sizeNum = receivedNum - 1
+        }
+        else if (collectionView.isEqual(primeCollectionView))
+        {
+            sizeNum = primeNumsArray.count
+        }
+        else if (collectionView.isEqual(compositeCollectionView))
+        {
+            sizeNum = compositeNumsArray.count
+        }
+
+        return sizeNum;
     }
     
     // Tell the collection view about the cell we want to use at a particular index of the collection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        
-        // Start from 1, not 0
-        let cellIndex = indexPath.item + 1
+       
         
         // Reference the storyboard cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reusableCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
         
-        // Set the visible cell number
-        cell.cellLabel.text = String(cellIndex)
         
-        print(cellIndex)
-        
-        // Set the background color: 
-        // True  ==> Is a prime number     ==> Green
-        // False ==> Is not a prime number ==> Red
-        if (sieveArray[cellIndex])
+        if (collectionView.isEqual(numberCollectionView))
         {
-            cell.backgroundColor = UIColor.greenColor()
+            // Start from 1, not 0 (ignore the number 0)
+            let cellIndex = indexPath.item + 1
             
-            //TODO: Color-blind flag
-//            cell.cellLabel.textColor = UIColor.blackColor()
+            // Set the visible cell number
+            cell.cellLabel.text = String(cellIndex)
+            
+            // Set the background color:
+            // True  ==> Is a prime number     ==> Green
+            // False ==> Is not a prime number ==> Red
+            if (sieveArray[cellIndex])
+            {
+                cell.backgroundColor = UIColor.greenColor()
+                
+                //TODO: Color-blind flag
+                //            cell.cellLabel.textColor = UIColor.blackColor()
+                
+            }
+            else
+            {
+                cell.backgroundColor = UIColor.redColor()
+                
+                //TODO: Color-blind flag
+                //            // Set the cell's text label to white color so that numbers are visible
+                //            cell.cellLabel.textColor = UIColor.whiteColor()
+                
+                //            // Make cells square
+                //            cell.layer.cornerRadius = 0
+            }
+        }
+        else if (collectionView.isEqual(primeCollectionView))
+        {
+            let cellIndex = indexPath.item
+
+            // Store next prime number
+            cell.cellLabel.text = String(primeNumsArray[cellIndex])
+            
+            cell.backgroundColor = UIColor.greenColor()
 
         }
-        else
+        else if (collectionView.isEqual(compositeCollectionView))
         {
+            let cellIndex = indexPath.item
+            
+            // Store next composite number
+            cell.cellLabel.text = String(compositeNumsArray[cellIndex])
+            
             cell.backgroundColor = UIColor.redColor()
 
-            //TODO: Color-blind flag
-//            // Set the cell's text label to white color so that numbers are visible
-//            cell.cellLabel.textColor = UIColor.whiteColor()
-            
-//            // Make cells square
-//            cell.layer.cornerRadius = 0
         }
         
         // -- Modify cell attributes further --
         
         // Make cells circular
-        if (cell.frame.size.height == 0.0)
-        {
-            print("Warning: Attempting to create a circle cell from a cell with no height.")
-        }
-        
         cell.layer.cornerRadius = cell.frame.size.height / 2
         
         // Set border color to black
@@ -201,7 +207,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // Increase border thickness
         cell.layer.borderWidth = 2.0
-        
         
         return cell
     }
@@ -212,8 +217,36 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Store current segmented selection location
         segmentedControlType = SegmentedControlEnum(rawValue: numberSegmentedControl.selectedSegmentIndex)!
 
-        // Invalidate layout so we can update/remove/add cells as requested
-        numberCollectionView.collectionViewLayout.invalidateLayout()
+        // Show respective collection view (we have 3 of them)
+        switch segmentedControlType
+        {
+            case .PRIME_NUM_SEGMENT:
+                
+                numberCollectionView.hidden     = true
+                compositeCollectionView.hidden  = true
+                primeCollectionView.hidden      = false
+                
+                break
+            case .ALL_NUM_SEGMENT:
+
+                numberCollectionView.hidden     = false
+                compositeCollectionView.hidden  = true
+                primeCollectionView.hidden      = true
+                
+                break
+            case .COMPOSITE_NUM_SEGMENT:
+                
+                numberCollectionView.hidden     = true
+                compositeCollectionView.hidden  = false
+                primeCollectionView.hidden      = true
+                
+                break
+        }
+
+        
+        
+//        // Invalidate layout so we can update/remove/add cells as requested
+//        numberCollectionView.collectionViewLayout.invalidateLayout()
         
     }
     

@@ -17,29 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        
-//        // Create an object to encapsulate Sieve of Eratosthenses algorithm functionality
-//        var sieveObj:SieveOfEratosthenses = SieveOfEratosthenses(newUpToNum: 30)
-//        
-//        sieveObj.computeSieveOfEratosthenses()
-//        
-//        sieveObj.outputListOfPrimeNums()
-//        
-//        print("NEXT")
-//        
-//        sieveObj.computeSieveOfEratosthenses(100)
-//        sieveObj.outputListOfPrimeNums()
-//        
-//        print("NEXT")
-//        
-//        sieveObj.computeSieveOfEratosthenses(50)
-//        sieveObj.outputListOfPrimeNums()
-//        
-//        print("NEXT")
-//        
-//        sieveObj.computeSieveOfEratosthenses(200)
-//        sieveObj.outputListOfPrimeNums()
-        
         return true
     }
 

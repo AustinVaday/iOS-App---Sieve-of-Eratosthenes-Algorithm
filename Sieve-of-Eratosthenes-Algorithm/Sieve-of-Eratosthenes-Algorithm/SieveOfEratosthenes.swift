@@ -124,8 +124,8 @@ class SieveOfEratosthenses
             
         }
         
-        // Fill up other arrays on the fly
-        for (var i = 0; i < size; i++)
+        // Fill up other arrays on the fly, ignore the number 0
+        for (var i = 1; i < size; i++)
         {
             if (listOfNums[i])
             {

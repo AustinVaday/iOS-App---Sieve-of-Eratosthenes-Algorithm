@@ -17,5 +17,179 @@
             endingLineNumber = "120">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+            timestampString = "476696500.572625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+            timestampString = "476696555.082861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "AlgorithmViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.__deallocating_deinit"
+                  moduleName = "Sieve-of-Eratosthenes-Algorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AustinVaday/git/iOS-App_Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+                  timestampString = "476697072.963936"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.init (Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController"
+                  moduleName = "Sieve-of-Eratosthenes-Algorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AustinVaday/git/iOS-App_Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+                  timestampString = "476697072.964214"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+            timestampString = "476696603.544204"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "AlgorithmViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.receivedString.getter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "Sieve-of-Eratosthenes-Algorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AustinVaday/git/iOS-App_Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+                  timestampString = "476697072.96727"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.receivedString.setter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "Sieve-of-Eratosthenes-Algorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AustinVaday/git/iOS-App_Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+                  timestampString = "476697072.967513"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.receivedString.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "Sieve-of-Eratosthenes-Algorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AustinVaday/git/iOS-App_Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+                  timestampString = "476697072.967679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.init (Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Sieve_of_Eratosthenes_Algorithm.AlgorithmViewController&gt;"
+                  moduleName = "Sieve-of-Eratosthenes-Algorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AustinVaday/git/iOS-App_Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+                  timestampString = "476697072.967984"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "377">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+            timestampString = "476696697.159064"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sieve-of-Eratosthenes-Algorithm/AlgorithmViewController.swift"
+            timestampString = "476696699.092029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
