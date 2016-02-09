@@ -171,11 +171,19 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         if (sieveArray[cellIndex])
         {
             cell.backgroundColor = UIColor.greenColor()
+            
+            //TODO: Color-blind flag
+//            cell.cellLabel.textColor = UIColor.blackColor()
+
 
         }
         else
         {
             cell.backgroundColor = UIColor.redColor()
+
+            //TODO: Color-blind flag
+//            // Set the cell's text label to white color so that numbers are visible
+//            cell.cellLabel.textColor = UIColor.whiteColor()
             
 //            // Make cells square
 //            cell.layer.cornerRadius = 0

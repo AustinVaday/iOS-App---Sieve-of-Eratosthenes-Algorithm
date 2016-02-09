@@ -25,15 +25,21 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+    
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        // Store reference for the destination View Controller
-        let destinationVC = segue.destinationViewController as! AlgorithmViewController
+        // Only perform following data operations when transitioning to AlgorithmViewController
+        if (segue.destinationViewController.isKindOfClass(AlgorithmViewController))
+        {
+            // Store reference for the destination View Controller
+            let destinationVC = segue.destinationViewController as! AlgorithmViewController
+            
+            destinationVC.receivedString = numberTextField.text
         
-        destinationVC.receivedString = numberTextField.text
-        
+        }
     }
     
     // Ensure that if user types in a letter, delete it immediately
