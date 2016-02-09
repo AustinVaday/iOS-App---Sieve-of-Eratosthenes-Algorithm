@@ -46,7 +46,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // Set the UI text field as the string received from the previous View Controller
         numberLabel.text = receivedString
-        
+
         // Convert string to number
         receivedNum = Int(receivedString)
         
