@@ -16,22 +16,26 @@ class ViewController: UIViewController {
     var inputString: String!
     let nonDigitChars = NSCharacterSet.decimalDigitCharacterSet().invertedSet
     let maxNumInput = 9
-    let numBackgroundComputations = 999999 // Number of background computations we can perform without a noticable delay
-    var sieveObj:SieveOfEratosthenses!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Perform long-running operation for algorithm on background thread
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            print("Begin thread dispatch")
-            self.sieveObj = SieveOfEratosthenses(newUpToNum: self.numBackgroundComputations)
-            
-            // This method will compute the algorithm on the background thread, as an abstraction to the user.
-            self.sieveObj.computeSieveOfEratosthenses()
-            
-            print("Completed filling array")
-        }
+        /* Threading limitations...
+            let numBackgroundComputations = 5 // Number of background computations we can perform without a noticable delay
+            var sieveObj:SieveOfEratosthenses!
+
+            // Perform long-running operation for algorithm on background thread
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+                
+                print("Begin thread dispatch")
+                self.sieveObj = SieveOfEratosthenses(newUpToNum: self.numBackgroundComputations)
+                
+                // This method will compute the algorithm on the background thread, as an abstraction to the user.
+                self.sieveObj.computeSieveOfEratosthenses()
+                
+                print("Completed filling array")
+            }
+        */
         
         spinner.hidden = true
         spinner.stopAnimating()
@@ -55,9 +59,11 @@ class ViewController: UIViewController {
             
             destinationVC.receivedString = numberTextField.text
             
-            // This will return the sieveObj at any point of time (no matter whether the dispatched operation
-            // has not finished)
-            destinationVC.sieveObj = self.sieveObj
+            /*
+                // This will return the sieveObj at any point of time (no matter whether the dispatched operation
+                // has not finished)
+                destinationVC.sieveObj = self.sieveObj
+            */
             
             // Begin playing spinner until segue occurs
             spinner.hidden = false

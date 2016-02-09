@@ -23,7 +23,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // 3 different collection views to switch between
     @IBOutlet weak var numberCollectionView: UICollectionView!
-
     @IBOutlet weak var primeCollectionView: UICollectionView!
     @IBOutlet weak var compositeCollectionView: UICollectionView!
     @IBOutlet weak var numberSegmentedControl: UISegmentedControl!
@@ -43,6 +42,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     var segmentedControlType : SegmentedControlEnum = .ALL_NUM_SEGMENT
     
     
+    // -- Constants --
     let reusableCellIdentifier = "numberCell"
     let minCellSpacing = CGFloat(0)
     let numCellPerRow  = CGFloat(10)
@@ -59,22 +59,23 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         receivedNum = Int(receivedString)
         
         /*
-        // Create object with the receivedNum
-        sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
-        
-        // Perform long-running operation on background thread
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            self.sieveObj.computeSieveOfEratosthenses()
-        }
+            // Create object with the receivedNum
+            sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
+            
+            // Perform long-running operation on background thread
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+                self.sieveObj.computeSieveOfEratosthenses()
+            }
         */
         
-        print(sieveObj.returnListOfNums().count)
+        sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
+        sieveObj.computeSieveOfEratosthenses()
         
         // Generate the sieveArray that holds all true/false values
         // (information whether an index/number is prime or not)
         sieveArray = sieveObj.returnListOfNums()
         
-        // Store prime and nonprime arrays, too
+        // Store respective prime and nonprime arrays, too
         primeNumsArray     = sieveObj.returnListOfPrimeNums()
         compositeNumsArray = sieveObj.returnListOfCompositeNums()
         
@@ -84,7 +85,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // Enforce 10 cells per row by calculating how much space there is for each cell
         calcCellSize = (collectionViewWidth - numCellPerRow * minCellSpacing) / numCellPerRow
-
         
         // Since default segment is "All Numbers", make sure other collectionViews are hidden
         primeCollectionView.hidden      = true
@@ -117,10 +117,8 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         var sizeNum:Int!
         
-        print("YEAH")
         if (collectionView.isEqual(numberCollectionView))
         {
-            print("NOO")
             // We need a collection of n-1 cells (the aglorithm does not include last digit of the specified up-to-num)
             // We also want to start from index 1 (so, take out a cell)
             sizeNum = receivedNum - 1
