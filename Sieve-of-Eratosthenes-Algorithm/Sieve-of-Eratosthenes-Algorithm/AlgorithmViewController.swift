@@ -48,6 +48,8 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     let numCellPerRow    =  CGFloat(10)
     let minNumCellPerRow = CGFloat(5)
     let collectionViewPadding = CGFloat(20+20)
+    let partitionAmount  = 5000
+
 
     
     override func viewDidLoad() {
@@ -68,6 +70,8 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
                 self.sieveObj.computeSieveOfEratosthenses()
             }
         */
+        
+        
         
         sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
         sieveObj.computeSieveOfEratosthenses()
@@ -151,8 +155,13 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Border thickness will vary. Thicker border => prime.
         var borderThickness: CGFloat = 2.0
         
+        
         // Reference the storyboard cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reusableCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
+        
+        // Rasterize the cell to increase FPS when scrolling
+        cell.layer.shouldRasterize = true
+        cell.layer.rasterizationScale = UIScreen.mainScreen().scale
         
         
         if (collectionView.isEqual(numberCollectionView))
@@ -175,6 +184,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
             {
                 cell.backgroundColor = UIColor.redColor()
             }
+  
         }
         else if (collectionView.isEqual(primeCollectionView))
         {
