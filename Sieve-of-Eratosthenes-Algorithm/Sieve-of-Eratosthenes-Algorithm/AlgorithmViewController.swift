@@ -44,8 +44,9 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // -- Constants --
     let reusableCellIdentifier = "numberCell"
-    let minCellSpacing = CGFloat(0)
-    let numCellPerRow  = CGFloat(10)
+    let minCellSpacing   = CGFloat(0)
+    let numCellPerRow    =  CGFloat(10)
+    let minNumCellPerRow = CGFloat(5)
     let collectionViewPadding = CGFloat(20+20)
 
     
@@ -85,6 +86,15 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         // Enforce 10 cells per row by calculating how much space there is for each cell
         calcCellSize = (collectionViewWidth - numCellPerRow * minCellSpacing) / numCellPerRow
+        
+        // If the circles are too small, re-calculate with only 5 cells per row
+        if (calcCellSize < 30)
+        {
+            calcCellSize = (collectionViewWidth - numCellPerRow * minCellSpacing) / minNumCellPerRow
+        }
+
+        
+        print(calcCellSize)
         
         // Since default segment is "All Numbers", make sure other collectionViews are hidden
         primeCollectionView.hidden      = true
