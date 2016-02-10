@@ -37,6 +37,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     var compositeNumsArray: Array<Int>!
     var collectionViewWidth: CGFloat!
     var calcCellSize: CGFloat!
+    var numPartitionsSet: Int = 1
     
     // Display all numbers by default
     var segmentedControlType : SegmentedControlEnum = .ALL_NUM_SEGMENT
@@ -48,7 +49,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     let numCellPerRow    =  CGFloat(10)
     let minNumCellPerRow = CGFloat(5)
     let collectionViewPadding = CGFloat(20+20)
-    let partitionMax  = 10000
+    let partitionMax  = 2001
 
 
     
@@ -77,29 +78,50 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         {
             sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
             sieveObj.computeSieveOfEratosthenses()
+            
+            
+            // Update numbers, primes, and composite arrays
+            updateAllSieveArrays()
+
 
         }
         else // Partition the work accordingly, but perform first partition right now.
         {
-            print("Begin else.")
+            //Pre-thread operations
             sieveObj = SieveOfEratosthenses(newUpToNum: partitionMax)
-            print("After object is generated")
+            sieveObj.computeSieveOfEratosthenses()
+            
+            // Update numbers, primes, and composite arrays
+            updateAllSieveArrays()
+            
+            numPartitionsSet = 1
+            
             // Compute rest asynchronously on background thread, immediately after the first partition
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
                 
-                print("Begin threading")
-                self.sieveObj.computeSieveOfEratosthenses()
+                self.sieveObj.computeSieveOfEratosthenses(self.receivedNum)
                 
-                // Update arrays when this thread operation finishes
                 self.updateAllSieveArrays()
+
+                 //Update arrays when this thread operation finishes
                 print("End threading")
+                
+                // Perform UI operation on main thread
+//                dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                
+                    // Also invalidate collection view layouts so we can reset the cells
+                    self.numberCollectionView.collectionViewLayout.invalidateLayout()
+                    self.primeCollectionView.collectionViewLayout.invalidateLayout()
+                    self.compositeCollectionView.collectionViewLayout.invalidateLayout()
+//                })
+                
+                
+                
+                
 
             }
         }
 
-        
-        // Update numbers, primes, and composite arrays
-        updateAllSieveArrays()
 
 
         // Store the width of the collection view so that we can programatically
@@ -119,8 +141,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Since default segment is "All Numbers", make sure other collectionViews are hidden
         primeCollectionView.hidden      = true
         compositeCollectionView.hidden  = true
-        
-        print("End of function")
         
     }
     
@@ -153,7 +173,18 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         {
             // We need a collection of n-1 cells (the aglorithm does not include last digit of the specified up-to-num)
             // We also want to start from index 1 (so, take out a cell)
-            sizeNum = receivedNum - 1
+            if (receivedNum < partitionMax * numPartitionsSet)
+            {
+                
+                sizeNum = receivedNum - 1
+            }
+            else
+            {
+                sizeNum = (partitionMax - 1) * numPartitionsSet
+                
+                print("Size Num is now", sizeNum)
+            }
+
         }
         else if (collectionView.isEqual(primeCollectionView))
         {
@@ -166,6 +197,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
 
         return sizeNum;
     }
+
     
     // Tell the collection view about the cell we want to use at a particular index of the collection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -184,9 +216,23 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         if (collectionView.isEqual(numberCollectionView))
         {
+            
             // Start from 1, not 0 (ignore the number 0)
             let cellIndex = indexPath.item + 1
             
+            print(cellIndex)
+
+            
+            // If we hit the partitionmax, load more cells and incrememnt our count of partitions!
+            if (cellIndex + 1 == (partitionMax * numPartitionsSet))
+            {
+                numPartitionsSet++
+                
+                // This resets number of cells we have
+                numberCollectionView.reloadSections(NSIndexSet(index: 0))
+            }
+//            else
+//            {
             // Set the visible cell number
             cell.cellLabel.text = String(cellIndex)
             
@@ -284,6 +330,8 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Generate the sieveArray that holds all true/false values
         // (information whether an index/number is prime or not)
         sieveArray = sieveObj.returnListOfNums()
+        
+        print("Sieve array size is: ", sieveArray.count)
         
         // Store respective prime and nonprime arrays, too
         primeNumsArray     = sieveObj.returnListOfPrimeNums()
