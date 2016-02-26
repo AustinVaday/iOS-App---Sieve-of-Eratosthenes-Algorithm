@@ -49,10 +49,8 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     let numCellPerRow    =  CGFloat(10)
     let minNumCellPerRow = CGFloat(5)
     let collectionViewPadding = CGFloat(20+20)
-    let partitionMax  = 2001
+    let partitionMax  = 5000    // Partitions display by 5000 elements at a time.
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,7 +72,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         
         
         // If the up-to-num given is less than the partition max, just perform the algorithm for that number
-        if (receivedNum < partitionMax)
+        if (receivedNum <= partitionMax)
         {
             sieveObj = SieveOfEratosthenses(newUpToNum: receivedNum)
             sieveObj.computeSieveOfEratosthenses()
@@ -156,6 +154,7 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // Collection view functionality
     
+    
     // Tell the collection view about the size of our cells
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
@@ -173,14 +172,16 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         {
             // We need a collection of n-1 cells (the aglorithm does not include last digit of the specified up-to-num)
             // We also want to start from index 1 (so, take out a cell)
-            if (receivedNum < partitionMax * numPartitionsSet)
+            if (receivedNum <= partitionMax * numPartitionsSet)
             {
+                
+                print ("Received num: ", receivedNum, " PartitionMax * numPartitionsSet = ", partitionMax * numPartitionsSet)
                 
                 sizeNum = receivedNum - 1
             }
             else
             {
-                sizeNum = (partitionMax - 1) * numPartitionsSet
+                sizeNum = partitionMax * numPartitionsSet
                 
                 print("Size Num is now", sizeNum)
             }
@@ -205,14 +206,12 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
         // Border thickness will vary. Thicker border => prime.
         var borderThickness: CGFloat = 2.0
         
-        
         // Reference the storyboard cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reusableCellIdentifier, forIndexPath: indexPath) as! NumberCollectionViewCell
         
         // Rasterize the cell to increase FPS when scrolling
         cell.layer.shouldRasterize = true
         cell.layer.rasterizationScale = UIScreen.mainScreen().scale
-        
         
         if (collectionView.isEqual(numberCollectionView))
         {
@@ -221,18 +220,19 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
             let cellIndex = indexPath.item + 1
             
             print(cellIndex)
-
+            
+            print ("partitionMax * numPartitions Set: ", partitionMax * numPartitionsSet);
             
             // If we hit the partitionmax, load more cells and incrememnt our count of partitions!
             if (cellIndex + 1 == (partitionMax * numPartitionsSet))
             {
+                showAlert("NUM PARTITION SET CHANGED!", message: "", buttonTitle: "", sender: self)
                 numPartitionsSet++
                 
                 // This resets number of cells we have
                 numberCollectionView.reloadSections(NSIndexSet(index: 0))
             }
-//            else
-//            {
+
             // Set the visible cell number
             cell.cellLabel.text = String(cellIndex)
             
@@ -318,8 +318,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
                 break
         }
 
-        
-        
 //        // Invalidate layout so we can update/remove/add cells as requested
 //        numberCollectionView.collectionViewLayout.invalidateLayout()
         
