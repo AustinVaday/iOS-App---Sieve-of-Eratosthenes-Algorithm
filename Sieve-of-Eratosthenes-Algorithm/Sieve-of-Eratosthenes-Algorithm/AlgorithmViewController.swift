@@ -226,7 +226,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
             // If we hit the partitionmax, load more cells and incrememnt our count of partitions!
             if (cellIndex + 1 == (partitionMax * numPartitionsSet))
             {
-                showAlert("NUM PARTITION SET CHANGED!", message: "", buttonTitle: "", sender: self)
                 numPartitionsSet++
                 
                 // This resets number of cells we have
