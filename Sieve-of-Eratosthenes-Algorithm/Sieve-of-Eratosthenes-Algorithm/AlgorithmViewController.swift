@@ -100,9 +100,6 @@ class AlgorithmViewController: UIViewController, UICollectionViewDataSource, UIC
                 self.sieveObj.computeSieveOfEratosthenses(self.receivedNum)
                 
                 self.updateAllSieveArrays()
-
-                 //Update arrays when this thread operation finishes
-                print("End threading")
                 
                 // Perform UI operation on main thread
 //                dispatch_sync(dispatch_get_main_queue(), { () -> Void in
